@@ -1,0 +1,38 @@
+/* Styling for the alumni banner image */
+.alumni-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Custom styling for the card container */
+.custom-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom styling for the avatar image */
+.avatar-img {
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 100px;
+}
+
+/* Custom styling for card text */
+.card-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-location {
+    font-size: 1rem;
+    color: #777;
+}
