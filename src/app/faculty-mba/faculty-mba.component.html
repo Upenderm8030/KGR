@@ -79,7 +79,7 @@
           Faculty for Business Management
         </div>
         <div class="card-body">
-          <div class="table my-2 table-responsive">
+          <!-- <div class="table my-2 table-responsive">
             <table class="table table-bordered">
               <thead class="table-light">
                 <tr class="table-active">
@@ -292,7 +292,30 @@
                 </tr>
               </tbody>
             </table>
+          </div> -->
+          <div class="table my-2 table-responsive">
+            <table class="table table-bordered">
+              <thead class="table-light">
+                <tr class="table-active">
+                  <th>Sl No:</th>
+                  <th>Name</th>
+                  <th>Designation</th>
+                  <th>Qualification</th>
+                  <th>Experience Teaching</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let faculty of alumnidataSource; let i = index">
+                  <td>{{ i + 1 }}</td> <!-- Sl No -->
+                  <td>{{ faculty.name }}</td> <!-- Name -->
+                  <td>{{ faculty.designation }}</td> <!-- Designation -->
+                  <td>{{ faculty.qualification }}</td> <!-- Qualification -->
+                  <td>{{ faculty.experience_teaching }}</td> <!-- Experience Teaching -->
+                </tr>
+              </tbody>
+            </table>
           </div>
+          
         </div>
       </div>
     </div>

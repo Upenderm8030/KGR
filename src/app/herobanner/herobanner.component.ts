@@ -22,7 +22,7 @@ export class HerobannerComponent {
     this.homecomponet.getbanner("Home","Banner").subscribe({
       next:(res:any) => {
         this.dataSource=res;
-        console.log("homeservice",res);
+        // console.log("homeservice",res);
         
       },
       error: (err: any) => {

@@ -55,6 +55,28 @@
                 </tr>
               </thead>
               <tbody>
+                <tr *ngFor="let facultypharamacy of facutlypharmacydataSource; let i = index">
+                  <td>{{ i + 1 }}</td> <!-- Sl No -->
+                  <td>{{ facultypharamacy.name }}</td> <!-- Name -->
+                  <td>{{ facultypharamacy.designation }}</td> <!-- Designation -->
+                  <td>{{ facultypharamacy.qualification }}</td> <!-- Qualification -->
+                  <td>{{ facultypharamacy.experience_teaching }}</td> <!-- Experience Teaching -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- <div class="table my-2 table-responsive">
+            <table class="table table-bordered">
+              <thead class="table-light">
+                <tr class="table-active">
+                  <th>Sl No:</th>
+                  <th>Name</th>
+                  <th>Designation</th>
+                  <th>Qualification</th>
+                  <th>Experience Teaching</th>
+                </tr>
+              </thead>
+              <tbody>
                 <tr>
                   <td>1</td>
                   <td>Dr. G. Vijaya Kumar</td>
@@ -192,7 +214,7 @@
 
               </tbody>
             </table>
-          </div>
+          </div> -->
         </div>
       </div>
 

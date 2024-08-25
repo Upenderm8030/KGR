@@ -20,7 +20,7 @@ export class WelcomeComponent {
     this.welcomeComponent.getCollegeupdates().subscribe({
       next: (res: any) => {
         this.collegeSource = res;
-        console.log("CollegeUpdates", res);
+        // console.log("CollegeUpdates", res);
 
       },
       error: (err: any) => {
@@ -30,7 +30,7 @@ export class WelcomeComponent {
     this.welcomeComponent.getStudentCount().subscribe({
       next: (res: any) => {
         this.StudentCountSource = res;
-        console.log("StudentCount", res);
+        // console.log("StudentCount", res);
 
       },
       error: (err: any) => {
@@ -40,7 +40,7 @@ export class WelcomeComponent {
     this.welcomeComponent.getFacutlyCount().subscribe({
       next: (res: any) => {
         this.FacultyCountSource = res;
-        console.log("FacultyCount", res);
+        // console.log("FacultyCount", res);
 
       },
       error: (err: any) => {
@@ -50,7 +50,7 @@ export class WelcomeComponent {
     this.welcomeComponent.getProgramsCount().subscribe({
       next: (res: any) => {
         this.ProgrmasCountSource = res;
-        console.log("programsCount", res);
+        // console.log("programsCount", res);
 
       },
       error: (err: any) => {
