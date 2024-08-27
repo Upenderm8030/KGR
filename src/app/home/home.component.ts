@@ -5,6 +5,9 @@ import { FormComponent } from '../form/form.component';
 import { HeaderComponent } from "../Components/header/header.component";
 import { FooterComponent } from "../Components/footer/footer.component";
 import { HerobannerComponent } from "../herobanner/herobanner.component";
+import { HomeService } from '../service/home.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-home',
@@ -17,7 +20,8 @@ import { HerobannerComponent } from "../herobanner/herobanner.component";
     FormComponent,
     HeaderComponent,
     FooterComponent,
-    HerobannerComponent
+    HerobannerComponent,
+    CommonModule
 ]
 })
 export class HomeComponent {
@@ -25,4 +29,4 @@ export class HomeComponent {
 
   ngOnInit(): void {
   }
-}  
+} 

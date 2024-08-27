@@ -1,34 +1,65 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlumniService } from '../service/alumni.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-alumni',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule 
   ],
   templateUrl: './alumni.component.html',
-  styleUrl: './alumni.component.css'
+  styleUrls: ['./alumni.component.css']
 })
-export class AlumniComponent {
-  alumnidataSource:any;
-  constructor(private alumniComponent:AlumniService) {}
+export class AlumniComponent implements OnInit {
+  alumnidataSource: any[] = []; // Full data set from the API
+  filteredAlumni: any[] = [];   // Filtered data set to be displayed
+  searchQuery: string = '';     // Model for search input
+
+  constructor(private alumniService: AlumniService) {}
+
   ngOnInit(): void {
-    
-    this.alumniComponent.getalumni().subscribe({
-      next:(res:any) => {
-        this.alumnidataSource=res;
-        // console.log("alumniservice",res);
-        
+    this.getAlumniData(); // Fetch initial data on component load
+  }
+
+  // Fetch alumni data from the service
+  getAlumniData(): void {
+    this.alumniService.getalumni().subscribe({
+      next: (res: any) => {
+        this.alumnidataSource = res;
+        this.filteredAlumni = res; // Initially display all data
+        console.log("Fetched Alumni Data:", this.alumnidataSource); // Debugging
       },
       error: (err: any) => {
+        console.error('Error fetching alumni data:', err);
       }
-    })
+    });
   }
-  // Function to add new alumni data manually, for demonstration purposes
-  addNewAlumni(newAlumni: any): void {
-    // Add the new alumni data to the existing array
-    this.alumnidataSource.push(newAlumni);
+
+  // Function to handle search and filter the data
+  onSearch(): void {
+    const query = this.searchQuery.toLowerCase().trim(); // Normalize the search query
+    console.log("Search Query:", query); // Debugging
+
+    if (query) {
+      this.filteredAlumni = this.alumnidataSource.filter((alumni: any) => {
+        const fullName = alumni.name.toLowerCase();
+        const location = alumni.location ? alumni.location.toLowerCase() : '';
+        const designation = alumni.designation ? alumni.designation.toLowerCase() : '';
+
+        return (
+          fullName.includes(query) ||
+          location.includes(query) ||
+          designation.includes(query)
+        );
+      });
+    } else {
+      // Reset to all alumni if the search query is empty
+      this.filteredAlumni = this.alumnidataSource;
+    }
+
+    console.log("Filtered Alumni Data:", this.filteredAlumni); // Debugging
   }
 }

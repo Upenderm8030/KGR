@@ -1,5 +1,5 @@
 .vision_and_mission {
-  background-image: url("../../assets/Images/vision_and_mission_bg_img.webp");
+  // background-image: url("../../assets/Images/vision_and_mission_bg_img.webp");
   background-size: cover;
   background-position: center;
   height: 300px;
@@ -67,16 +67,8 @@
       display: none;
     }
   }
-  .gridItemImg {
-    width: calc(100% - 80px);
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
   .widOfgrid {
-    width: 80px;
+    width: 25%;
     background: #6a0dad;
     position: relative;
     span {

@@ -16,7 +16,6 @@ export class WelcomeComponent {
 
   constructor(private welcomeComponent: HomeService) { }
   ngOnInit(): void {
-
     this.welcomeComponent.getCollegeupdates().subscribe({
       next: (res: any) => {
         this.collegeSource = res;

@@ -3,6 +3,7 @@ import { HeaderComponent } from '../Components/header/header.component';
 import { FooterComponent } from '../Components/footer/footer.component';
 import { GalleryService } from '../service/gallery.service';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-gallery',
   standalone: true,
